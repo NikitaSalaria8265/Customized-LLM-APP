@@ -40,9 +40,7 @@ Contributions to improve the Paperless Music Assistant are welcome. Please follo
 2. Create a new branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-## License
-[Specify your license here]
+5. Open a Pull Request.
 ## Disclaimer
 Paperless Music is a digital platform for music creation, distribution, and consumption. While we strive for accuracy and functionality, we cannot guarantee error-free operation or suitability for every user.
 ## Contact
