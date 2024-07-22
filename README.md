@@ -15,7 +15,7 @@ Before setting up the Paperless Music Assistant, ensure you have:
 - A Hugging Face account (for model access)
 ## Installation
 1. Clone the repository:
-   git clone https://github.com/yourusername/paperless-music-assistant.git
+   git clone https://github.com/NikitaSalaria8265/paperless-music-assistant.git
    cd paperless-music-assistant
 2. Install the required packages:
    pip install -r requirements.txt
