@@ -1,42 +1,88 @@
-# Customized-LLM-APP
+```markdown
+# Paperless Music Assistant
 
-Building a Retrieval-Augmented Generation (RAG) bot can significantly enhance the capabilities of a language model by incorporating external knowledge to generate more accurate and contextually relevant responses. This guide will walk you through creating a simple RAG bot using Gradio and the Hugging Face APIs.
+A sophisticated AI chatbot powered by the Zephyr 7B model, specializing in music-related information and creative tasks.
 
-But how does RAG enhance LLM’s performance?
+## Introduction
 
-RAG improves the performance of language models by augmenting them with external documents. This method retrieves relevant documents based on the user query and combines them with the original prompt before passing them to the language model for response generation. This approach ensures that the language model can access up-to-date and domain-specific information without the need for extensive retraining.
+The Paperless Music Assistant is an advanced chatbot designed to provide comprehensive information on artists, albums, songs, genres, and musical history. It can also generate creative content like song lyrics, scripts, and stories based on music-related prompts. This assistant is powered by the Zephyr 7B model and utilizes Retrieval-Augmented Generation (RAG) to provide accurate and contextually relevant responses.
 
+## Features
 
+- Comprehensive music knowledge base
+- Creative text generation for music-related content
+- RAG-enhanced responses for improved accuracy
+- User-friendly chat interface powered by Gradio
+- Customizable chat parameters
 
-A common scenario of RAG helping LLM (Source)
+## Prerequisites
 
-The basic steps in RAG can be simplified as follows:
+Before setting up the Paperless Music Assistant, ensure you have:
 
-Input: The question to which the LLM system responds is referred to as the input. If no RAG is used, the LLM is directly used to respond to the question.
+- Python 3.7+
+- pip (Python package manager)
+- A Hugging Face account (for model access)
 
-Indexing: If RAG is used, then a series of related documents are indexed by chunking them first, generating embeddings of the chunks, and indexing them into a vector store. At inference, the query is also embedded in a similar way.
+## Installation
 
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/paperless-music-assistant.git
+   cd paperless-music-assistant
+   ```
 
-Basic retrieval steps in RAG. (Source)
+2. Install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
 
-Retrieval: The relevant documents are obtained by comparing the query against the indexed vectors, also denoted as “Relevant Documents”.
+## Usage
 
-Generation: The relevant documents are combined with the original prompt as additional context. The combined text and prompt are then passed to the model for response generation which is then prepared as the final output of the system to the user.
+1. Run the application:
+   ```
+   python app.py
+   ```
 
-In the example provided, using the model directly fails to respond to the question due to a lack of knowledge of current events. On the other hand, when using RAG, the system can pull the relevant information needed for the model to answer the question appropriately. (Source)
+2. Open your web browser and navigate to the local URL provided in the terminal (typically http://127.0.0.1:7860).
 
-Now Let’s Build a Chatbot using RAG:
+3. Start interacting with the Paperless Music Assistant through the chat interface.
 
-I have used Zephyr LLM model and all-MiniLM-L6-v2 sentence transformer model. This sentence-transformers model maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
+## How It Works
 
-The all-* models were trained on all available training data (more than 1 billion training pairs) and are designed as general purpose models. The all-mpnet-base-v2 model provides the best quality, while all-MiniLM-L6-v2 is 5 times faster and still offers good quality. Toggle All models to see all evaluated original models.
+1. **PDF Processing**: The app loads and processes a PDF file ("Paperless Music.pdf") to build its knowledge base.
 
-We need the following ingredients:
+2. **Vector Database**: A vector database is created from the PDF content for efficient information retrieval.
 
-1. A PDF as your knowledgebase
+3. **RAG System**: When a user asks a question, the system retrieves relevant information from the vector database.
 
-2. A requirements.txt file
+4. **AI Response**: The Zephyr 7B model generates a response based on the user's query and the retrieved information.
 
-3. An app.py file
+## Customization
 
-4. An account on Hugging Face (See this blog to learn about building a LLM chatbot in Hugging Face)
+You can customize the assistant's behavior by modifying the following in `app.py`:
+
+- `system_message`: Adjust the AI's persona and capabilities.
+- Chat parameters: Modify `max_tokens`, `temperature`, and `top_p` for different response characteristics.
+- `examples`: Add or modify example queries in the chat interface.
+
+## Contributing
+
+Contributions to improve the Paperless Music Assistant are welcome. Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+[Specify your license here]
+
+## Disclaimer
+
+Paperless Music is a digital platform for music creation, distribution, and consumption. While we strive for accuracy and functionality, we cannot guarantee error-free operation or suitability for every user.
+
+## Contact
+
+For any questions or feedback regarding the Paperless Music Assistant, please contact Ni4368265@alphacollege.me.
