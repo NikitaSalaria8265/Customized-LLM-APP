@@ -22,7 +22,7 @@ Before setting up the Paperless Music Assistant, ensure you have:
 ## Usage
 1. Run the application:
    python app.py
-2. Open your web browser and navigate to the local URL provided in the terminal (typically http://127.0.0.1:7860).
+2. Open your web browser and navigate to the local URL provided in the terminal.
 3. Start interacting with the Paperless Music Assistant through the chat interface.
 ## How It Works
 1. **PDF Processing**: The app loads and processes a PDF file ("Paperless Music.pdf") to build its knowledge base.
